@@ -43,6 +43,12 @@
    log_level info
    loggly_url "https://logs-01.loggly.com/inputs/#{ENV['LOGGLY_TOKEN']}/tag/fluentd"
 </match>
+<%  when "logmatic"%>
+<match **>
+  @type logmatic
+  @id awesome_agent
+  api_key "#{ENV['LOGMATIC_API_KEY']}"
+</match>
 <%  when "cloudwatch"%>
 <match **>
   type cloudwatch_logs

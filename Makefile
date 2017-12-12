@@ -14,11 +14,13 @@ IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
 	v0.12/alpine-elasticsearch:v0.12.33-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
 	v0.12/alpine-loggly:v0.12.33-loggly,v0.12-loggly,stable-loggly,loggly \
+	v0.12/alpine-logmatic:v0.12.33-logmatic,v0.12-logmatic,stable-logmatic,logmatic \
 	v0.12/alpine-logentries:v0.12.33-logentries,v0.12-logentries,stable-logentries,logentries \
 	v0.12/alpine-cloudwatch:v0.12.33-cloudwatch,v0.12-cloudwatch,stable-cloudwatch,cloudwatch \
 	v0.12/alpine-s3:v0.12.33-s3,v0.12-s3,stable-s3,s3 \
 	v0.12/debian-elasticsearch:v0.12.33-debian-elasticsearch,v0.12-debian-elasticsearch,debian-elasticsearch \
 	v0.12/debian-loggly:v0.12.33-debian-loggly,v0.12-debian-loggly,debian-loggly \
+	v0.12/debian-logmatic:v0.12.33-debian-logmatic,v0.12-debian-logmatic,debian-logmatic \
 	v0.12/debian-logentries:v0.12.33-debian-logentries,v0.12-debian-logentries,debian-logentries \
 	v0.12/debian-cloudwatch:v0.12.33-debian-cloudwatch,v0.12-debian-cloudwatch,debian-cloudwatch \
 	v0.12/debian-stackdriver:v0.12.33-debian-stackdriver,v0.12-debian-stackdriver,debian-stackdriver \
@@ -89,7 +91,7 @@ push:
 # Usage:
 #	make release [no-cache=(yes|no)] [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
 
-release: | image tags push
+release: | image tags # push
 
 # Make manual release of all supported Docker images to Docker Hub.
 #
